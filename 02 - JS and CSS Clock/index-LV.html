@@ -59,20 +59,16 @@
         position: absolute;
         top: 50%;
         transform-origin: right;
+        transition: all 0.05s;
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
       }
     </style>
 
     <script>
       const __main = () => {
-        const getDegree = (type, time) => {
-          const totalMapper = {
-            hour: 24,
-            minite: 60,
-            second: 60,
-          };
-
-          return (time / totalMapper[type]) * 360 + 90 + "deg";
-        };
+        const hourHand = document.querySelector(".hour-hand");
+        const minuteHand = document.querySelector(".min-hand");
+        const secondHand = document.querySelector(".second-hand");
 
         setInterval(() => {
           const current = new Date();
@@ -80,19 +76,14 @@
           const hour = current.getHours();
           const minute = current.getMinutes();
           const second = current.getSeconds();
-          console.log(hour, minute, second);
 
-          const hourDeg = getDegree("hour", hour);
-          const minuteDeg = getDegree("minute", minute);
-          const secondDeg = getDegree("second", second);
+          const hourDeg = ((hour + minute / 60 + second / 360) / 12) * 360 + 90;
+          const minuteDeg = ((minute + second / 60) / 60) * 360 + 90;
+          const secondDeg = (second / 60) * 360 + 90;
 
-          const hourHand = document.querySelector(".hour-hand");
-          const minuteHand = document.querySelector(".min-hand");
-          const secondHand = document.querySelector(".second-hand");
-
-          hourHand.style.transform = `rotate(${hourDeg})`;
-          minuteHand.style.transform = `rotate(${minuteDeg})`;
-          secondHand.style.transform = `rotate(${secondDeg})`;
+          hourHand.style.transform = `rotate(${hourDeg}deg)`;
+          minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+          secondHand.style.transform = `rotate(${secondDeg}deg)`;
         }, 1000);
       };
 
