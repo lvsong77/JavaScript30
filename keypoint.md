@@ -4,3 +4,6 @@
 | 2 | JS and CSS Clock | `transition: all 0.05s; transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);` |
 | 3 | JS and CSS Clock | `document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);` |
 | 4 | Array Cardio Day 1 | `const [aLast, aFirst] = lastOne.split(', ');` |
+| 5 | Flex Panel Gallery | all the css; the use of this; |
+| 7 | Array Cardio Day 2 | `undefined` |
+| 8 | Fun with HTML5 Canvas | some canvas api |
