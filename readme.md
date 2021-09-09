@@ -12,3 +12,4 @@ started at 2021/8/24
 | 7 | Array Cardio Day 2 | 2021/8/31 |
 | 8 | Fun with HTML5 Canvas | 2021/8/31 |
 | 9 | Dev Tools Domination | 2021/9/9 |
+| 10 | Hold Shift and Check Checkboxes | 2021/9/9 |

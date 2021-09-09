@@ -8,3 +8,4 @@
 | 7 | Array Cardio Day 2 | `undefined` |
 | 8 | Fun with HTML5 Canvas | some canvas api |
 | 9 | Dev Tools Domination | some console api |
+| 10 | Hold Shift and Check Checkboxes | `this` |

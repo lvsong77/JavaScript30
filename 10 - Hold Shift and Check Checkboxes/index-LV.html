@@ -97,11 +97,28 @@
     <script>
       const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-      let lastChecked;
+      let lastCheckedIndex;
 
-      for (let i = 0; i < checkboxes.length; i++) {
-        const el = checkboxes[i];
-      }
+      const handleClick = (e) => {
+        const target = e.target;
+        for (let i = 0; i < checkboxes.length; i++) {
+          const el = checkboxes[i];
+          if (target === el) {
+            if (e.shiftKey) {
+              console.log("last", lastCheckedIndex);
+              const firstIndex = lastCheckedIndex <= i ? lastCheckedIndex : i;
+              const lastIndex = lastCheckedIndex <= i ? i : lastCheckedIndex;
+              for (let j = firstIndex; j < lastIndex; j++) {
+                const element = checkboxes[j];
+                element.checked = true;
+              }
+            }
+            lastCheckedIndex = i;
+          }
+        }
+      };
+
+      checkboxes.forEach((el) => el.addEventListener("click", handleClick));
     </script>
   </body>
 </html>
