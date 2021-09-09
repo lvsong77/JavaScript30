@@ -7,3 +7,4 @@
 | 5 | Flex Panel Gallery | all the css; the use of this; |
 | 7 | Array Cardio Day 2 | `undefined` |
 | 8 | Fun with HTML5 Canvas | some canvas api |
+| 9 | Dev Tools Domination | some console api |
