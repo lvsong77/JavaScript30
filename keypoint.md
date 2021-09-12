@@ -10,3 +10,4 @@
 | 9 | Dev Tools Domination | some console api |
 | 10 | Hold Shift and Check Checkboxes | `this` |
 | 11 | Custom Video Player | `this` |
+| 12 | Key Sequence Detection | cornify.js is interesting |

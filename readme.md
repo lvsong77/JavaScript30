@@ -14,3 +14,4 @@ started at 2021/8/24
 | 9 | Dev Tools Domination | 2021/9/9 |
 | 10 | Hold Shift and Check Checkboxes | 2021/9/9 |
 | 11 | Custom Video Player | 2021/9/10 |
+| 12 | Key Sequence Detection | 2021/9/12 |
