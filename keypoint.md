@@ -11,3 +11,8 @@
 | 10 | Hold Shift and Check Checkboxes | `this` |
 | 11 | Custom Video Player | `this` |
 | 12 | Key Sequence Detection | cornify.js is interesting |
+| 12 | Slide in on Scroll | how to judge scroll to view? |
+| 14 | JavaScript References VS Copying | copy array: `arr.slice() [].concat(arr)` |
+| 15 | LocalStorage | the uses of origin document api |
+| 16 | Mouse Move Shadow | `undefined` |
+| 17 | Sort Without Articles | the ues of RegExp |
