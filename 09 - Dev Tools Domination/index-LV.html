@@ -20,63 +20,49 @@
       }
 
       // Regular
-      console.log("hello");
+      console.log("hello world");
 
       // Interpolated
-      console.log("Hello I am a %s string!", "💩");
+      console.log("my first name is %s", "lv");
 
       // Styled
-      console.log(
-        "%c I am some great text",
-        "font-size:50px; background:red; text-shadow: 10px 10px 0 blue"
-      );
+      console.log("%cmy last name is song", "color: blue;");
 
       // warning!
-      console.warn("OH NOOO");
+      console.warn("warning");
 
       // Error :|
-      console.error("Shit!");
+      console.error("danger");
 
       // Info
-      console.info("Crocodiles eat 3-4 people per year");
+      console.info("info");
 
       // Testing
-      const p = document.querySelector("p");
-
-      console.assert(p.classList.contains("ouch"), "That is wrong!");
+      console.assert(1 === 1, "right");
+      console.assert(1 === 2, "wrong");
 
       // clearing
-      // console.clear();
+      console.clear();
 
       // Viewing DOM Elements
+      const p = document.querySelector("p");
+
       console.log(p);
       console.dir(p);
-
-      // console.clear();
 
       // Grouping together
       dogs.forEach((dog) => {
         console.groupCollapsed(`${dog.name}`);
-        console.log(`This is ${dog.name}`);
+        console.log(`this is ${dog.name}`);
         console.log(`${dog.name} is ${dog.age} years old`);
-        console.log(`${dog.name} is ${dog.age * 7} dog years old`);
-        console.groupEnd(`${dog.name}`);
+        console.groupEnd();
       });
 
       // counting
 
-      console.count("Wes");
-      console.count("Wes");
-      console.count("Steve");
-      console.count("Steve");
-      console.count("Wes");
-      console.count("Steve");
-      console.count("Wes");
-      console.count("Steve");
-      console.count("Steve");
-      console.count("Steve");
-      console.count("Steve");
-      console.count("Steve");
+      console.count("a");
+      console.count("b");
+      console.count("a");
 
       // timing
       console.time("fetching data");
@@ -87,7 +73,7 @@
           console.log(data);
         });
 
-      console.table(dogs);
+      console.log("------");
     </script>
   </body>
 </html>

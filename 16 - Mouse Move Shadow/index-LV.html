@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mouse Shadow</title>
+  </head>
+  <body>
+    <div class="hero">
+      <h1 contenteditable>🔥WOAH!</h1>
+    </div>
+
+    <style>
+      html {
+        color: black;
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+      }
+
+      h1 {
+        text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+        font-size: 100px;
+      }
+    </style>
+
+    <script>
+      const hero = document.querySelector(".hero");
+      const text = hero.querySelector("h1");
+
+      const textPos = text.getBoundingClientRect();
+      const centerX = textPos.x + textPos.width / 2;
+      const centerY = textPos.y + textPos.height / 2;
+
+      const renderShadow = (e) => {
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+
+        const rangeX = mouseX - centerX;
+        const rangeY = mouseY - centerY;
+
+        text.style.textShadow = `
+          ${rangeX}px ${rangeY}px 0 rgba(255,0,255,0.7),
+          ${rangeX * -1}px ${rangeY}px 0 rgba(0,255,255,0.7),
+          ${rangeY}px ${rangeX * -1}px 0 rgba(0,255,0,0.7),
+          ${rangeY * -1}px ${rangeX}px 0 rgba(0,0,255,0.7)
+        `;
+      };
+
+      window.addEventListener("mousemove", renderShadow);
+    </script>
+  </body>
+</html>
