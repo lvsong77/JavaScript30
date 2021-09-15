@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Type Ahead 👀</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form class="search-form">
+      <input type="text" class="search" placeholder="City or State" />
+      <ul class="suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+      </ul>
+    </form>
+    <script>
+      const endpoint =
+        "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+
+      let cityList = [];
+
+      fetch(endpoint)
+        .then((blob) => blob.json())
+        .then((data) => {
+          cityList = data;
+        });
+
+      const input = document.querySelector(".search");
+      const suggestions = document.querySelector(".suggestions");
+
+      const filterCity = (keyword) => {
+        keyword = keyword.toLowerCase();
+
+        const filteredCityList = cityList.filter(
+          (item) =>
+            item.city.toLowerCase().indexOf(keyword) !== -1 ||
+            item.state.toLowerCase().indexOf(keyword) !== -1
+        );
+
+        return filteredCityList;
+      };
+
+      const getFormatedNumber = (number) => {
+        const arr = Array.from(String(number)).reverse();
+
+        let result = "";
+
+        for (let i = 0; i < arr.length; i++) {
+          const num = arr[i];
+          result = num + result;
+
+          if (i % 3 === 2 && i !== arr.length - 1) {
+            result = "," + result;
+          }
+        }
+
+        return result;
+      };
+
+      const getHighlightedText = (keyword, text) => {
+        return text.replace(
+          new RegExp(`${keyword}`, "gi"),
+          `<span class="hl">${keyword}</span>`
+        );
+      };
+
+      const showList = (keyword, list) => {
+        let lis = "";
+        for (const item of list) {
+          lis += `<li><span>${getHighlightedText(
+            keyword,
+            item.city
+          )}, ${getHighlightedText(keyword, item.state)}</span>
+            <span class="population">${getFormatedNumber(
+              item.population
+            )}</span>
+          </li>`;
+        }
+        suggestions.innerHTML = lis;
+      };
+
+      input.addEventListener("input", () => {
+        const keyword = input.value;
+
+        const filteredCityList = filterCity(keyword);
+
+        showList(keyword, filteredCityList);
+      });
+    </script>
+  </body>
+</html>
