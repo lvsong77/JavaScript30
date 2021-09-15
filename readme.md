@@ -21,3 +21,4 @@ started at 2021/8/24
 | 15 | LocalStorage | 2021/9/13 |
 | 16 | Mouse Move Shadow | 2021/9/14 |
 | 17 | Sort Without Articles | 2021/9/14 |
+| 18 | Adding Up Times with Reduce | 2021/9/15 |

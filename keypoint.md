@@ -17,3 +17,4 @@
 | 15 | LocalStorage | the uses of origin document api |
 | 16 | Mouse Move Shadow | `undefined` |
 | 17 | Sort Without Articles | the ues of RegExp |
+| 18 | Adding Up Times with Reduce | `document.querySelectorAll` is no real array!!! |
